@@ -1,6 +1,8 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
+import '../share/currency_widget.dart';
+
 class CotacaoMoedasPage extends StatefulWidget {
   const CotacaoMoedasPage({super.key});
 
@@ -11,51 +13,16 @@ class CotacaoMoedasPage extends StatefulWidget {
 class _CotacaoMoedasPagesState extends State<CotacaoMoedasPage> {
   final faker = Faker();
   final moeda =
-      Moeda(name: 'Dollar', buy: 4.9191, sell: 4.9191, variate: -1.761);
+      CurrencyModel(name: 'Dollar', buy: 4.9191, sell: 4.9191, variate: -1.761);
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: 10, // numero de elementos gerados
       itemBuilder: (context, index) {
         //return BusinessCard(faker: faker);
-        return MoedaCard(moeda: moeda);
+        return CurrencyWidget(moeda: moeda);
       },
     );
-  }
-}
-
-class MoedaCard extends StatelessWidget {
-  const MoedaCard({super.key, required this.moeda});
-  final Moeda moeda;
-  @override
-  Widget build(
-    BuildContext context,
-  ) {
-    return Card(
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundColor: Colors.yellow,
-          backgroundImage: NetworkImage(
-            faker.image.image(keywords: ['icon ${moeda.name}']).toString(),
-          ),
-        ),
-        title: Text(moeda.name),
-        subtitle: Text(moeda.showMoeda()),
-      ),
-    );
-  }
-}
-
-class Moeda {
-  String name;
-  double buy;
-  double sell;
-  double variate;
-
-  Moeda({required this.name, this.buy = 0, this.sell = 0, this.variate = 0});
-
-  String showMoeda() {
-    return 'Compra: R\$${buy.toStringAsFixed(2)} - Venda: R\$${sell.toStringAsFixed(2)} - Variação: ${variate.toStringAsFixed(2)}%';
   }
 }
 
