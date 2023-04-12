@@ -52,11 +52,7 @@ class Moeda {
   double sell;
   double variate;
 
-  Moeda(
-      {required this.name,
-      required this.buy,
-      required this.sell,
-      required this.variate});
+  Moeda({required this.name, this.buy = 0, this.sell = 0, this.variate = 0});
 
   String showMoeda() {
     return 'Compra: R\$${buy.toStringAsFixed(2)} - Venda: R\$${sell.toStringAsFixed(2)} - Variação: ${variate.toStringAsFixed(2)}%';
