@@ -11,7 +11,6 @@ class CotacaoMoedasPage extends StatefulWidget {
 }
 
 class _CotacaoMoedasPagesState extends State<CotacaoMoedasPage> {
-  final faker = Faker();
   final moeda =
       CurrencyModel(name: 'Dollar', buy: 4.9191, sell: 4.9191, variate: -1.761);
   @override
