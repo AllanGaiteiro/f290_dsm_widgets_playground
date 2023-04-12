@@ -1,3 +1,4 @@
+import 'package:f290_dsm_widgets_playground/pages/cotacao_moedas_page.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationPage extends StatefulWidget {
@@ -9,7 +10,7 @@ class BottomNavigationPage extends StatefulWidget {
 
 class _BottomNavigationPageState extends State<BottomNavigationPage> {
   var pages = [
-    Container(color: Colors.deepOrange),
+    const CotacaoMoedasPage(),
     Container(color: Colors.deepPurple),
     Container(color: Colors.pink),
   ];
