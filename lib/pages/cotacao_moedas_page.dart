@@ -10,27 +10,13 @@ class CotacaoMoedasPage extends StatefulWidget {
 class _CotacaoMoedasPagesState extends State<CotacaoMoedasPage> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        const Text('Linha 01'),
-        const Text('Linha 02'),
-        FilledButton(onPressed: () {}, child: const Text("Botao")),
-        const Text('Linha 01'),
-        const Text('Linha 02'),
-        FilledButton(onPressed: () {}, child: const Text("Botao")),
-        const Text('Linha 01'),
-        const Text('Linha 02'),
-        FilledButton(onPressed: () {}, child: const Text("Botao")),
-        const Text('Linha 01'),
-        const Text('Linha 02'),
-        FilledButton(onPressed: () {}, child: const Text("Botao")),
-        const Text('Linha 01'),
-        const Text('Linha 02'),
-        FilledButton(onPressed: () {}, child: const Text("Botao")),
-        const Text('Linha 01'),
-        const Text('Linha 02'),
-        FilledButton(onPressed: () {}, child: const Text("Botao")),
-      ],
+    return ListView.builder(
+      itemCount: 10, // numero de elementos gerados
+      itemBuilder: (context, index) {
+        return Card(
+          child: ListTile(title: Text("Titulo do Card ${index + 1}")),
+        );
+      },
     );
   }
 }
